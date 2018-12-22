@@ -19,8 +19,9 @@ module vga_display (
 	
 	parameter TOP = 0, BOTTOM = 10'd480, LEFT = 0, RIGHT = 10'd640;
 	
-	parameter battles_num = 10, battles_gap = 10'd50, battle_radius = 10'd20, battles_y = 10'd50;
+	parameter battles_num = 12, battles_gap = 10'd100, battle_radius = 10'd40;
 	reg[31:0] battles_x[battles_num];
+	reg[31:0] battles_y[battles_num];
 	reg[31:0] battles_state;
 	
 	integer n;
@@ -41,12 +42,24 @@ module vga_display (
 	//activated when 1
 	reg x_left_state = 0, x_right_state = 0, y_top_state = 0, y_bottom_state = 0;
 	reg dir_state = 0;
-
+	reg[31:0] temp;
 	initial
 	begin
-		for(n = 0; n < battles_num; n = n + 1)
+		for(n = 0; n < battles_num/3; n = n + 1)
 		begin
-			battles_x[n] =  10'd100 + n*battles_gap;
+			battles_x[n] = 10'd100 + n*battles_gap;
+			battles_y[n] = 10'd50;
+		end
+		temp = battles_y[n];
+		for(n = battles_num/3; n < 2*battles_num/3; n = n + 1)
+		begin
+			battles_x[n] = 10'd70 + (n-battles_num/3)*battles_gap;
+			battles_y[n] = 10'd150;
+		end
+		for(n = 2*battles_num/3; n < battles_num; n = n + 1)
+		begin
+			battles_x[n] = 10'd130 + (n-2*battles_num/3)*battles_gap;
+			battles_y[n] = 10'd250;
 		end
 		battles_state <= ~(32'b0);
 		
@@ -112,8 +125,11 @@ module vga_display (
 	integer b;
 	always @ (posedge clk_200ms)begin
 		//crack the Horizontal edge
-		if(ball_x >= rec_x && ball_x+ball_radius <= rec_x+rec_width 
-			&& ball_y+ball_radius > rec_y && ball_y < rec_y)begin
+		if((ball_x >= rec_x && ball_x+ball_radius <= rec_x+rec_width 
+			&& ball_y+ball_radius > rec_y && ball_y < rec_y)
+			||
+			(ball_x >= rec_x && ball_x+ball_radius <= rec_x+rec_width 
+			&& ball_y+ball_radius > rec_y+rec_height && ball_y < rec_y+rec_height))begin
 			//change y
 			//ball_y = rec_y - ball_radius - speed;
 			direction[0] = ~direction[0];
@@ -128,11 +144,40 @@ module vga_display (
 		for(b = 0; b < battles_num; b = b + 1)
 		begin
 			if(ball_x+ball_radius > battles_x[b] && ball_x < battles_x[b]+battle_radius
-				&& ball_y+ball_radius > battles_y && ball_y < battles_y + battle_radius
+				&& ball_y+ball_radius > battles_y[b] && ball_y < battles_y[b] + battle_radius
 				&& battles_state[b])
 			begin
 				battles_state[b] = 0;
-				direction = ~direction;
+				//direction = ~direction;
+				if(ball_x < rec_x)
+				begin
+					if(ball_y+ball_radius-rec_y > ball_x+ball_radius-rec_x)
+					begin
+						direction[1] = ~direction[1];
+					end else begin
+						direction = ~direction;
+					end
+				end else if(ball_x+ball_radius > rec_x+rec_width)
+				begin
+					if(ball_y+ball_radius-rec_y > rec_x+rec_width-ball_x)
+					begin
+						direction[1] = ~direction[1];
+					end else begin
+						direction = ~direction;
+					end
+				end 
+				else begin
+					if(ball_y < rec_y)
+					begin
+						direction[0] = ~direction[0];
+					end else if(ball_y+ball_radius > rec_y+rec_height)
+					begin
+						direction[0] = ~direction[0];
+					end else begin
+						direction = ~direction;
+					end
+				end
+
 			end
 		end
 		case(direction)
@@ -258,7 +303,7 @@ module vga_display (
 				for (i = 0; i < battles_num; i = i + 1)
 				begin
 					if(Hcnt > battles_x[i] && Hcnt < battles_x[i] + battle_radius
-						&& Vcnt > battles_y && Vcnt < battles_y + battle_radius
+						&& Vcnt > battles_y[i] && Vcnt < battles_y[i] + battle_radius
 						&& battles_state[i])
 					begin
 						VGA_R = 8'd80;
