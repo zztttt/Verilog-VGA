@@ -1,0 +1,47 @@
+|vga_display
+clk => count[0].CLK
+clk => count[1].CLK
+resetn => b[0]~reg0.ACLR
+resetn => b[1]~reg0.ACLR
+resetn => b[2]~reg0.ACLR
+resetn => g[0]~reg0.ACLR
+resetn => g[1]~reg0.ACLR
+resetn => g[2]~reg0.ACLR
+resetn => r[0]~reg0.ACLR
+resetn => r[1]~reg0.ACLR
+resetn => r[2]~reg0.ACLR
+resetn => vcount[0].ACLR
+resetn => vcount[1].ACLR
+resetn => vcount[2].ACLR
+resetn => vcount[3].ACLR
+resetn => vcount[4].ACLR
+resetn => vcount[5].ACLR
+resetn => vcount[6].ACLR
+resetn => vcount[7].ACLR
+resetn => vcount[8].ACLR
+resetn => vcount[9].ACLR
+resetn => hcount[0].ACLR
+resetn => hcount[1].ACLR
+resetn => hcount[2].ACLR
+resetn => hcount[3].ACLR
+resetn => hcount[4].ACLR
+resetn => hcount[5].ACLR
+resetn => hcount[6].ACLR
+resetn => hcount[7].ACLR
+resetn => hcount[8].ACLR
+resetn => hcount[9].ACLR
+resetn => count[0].ACLR
+resetn => count[1].ACLR
+r[0] << r[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+r[1] << r[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+r[2] << r[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+g[0] << g[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+g[1] << g[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+g[2] << g[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+b[0] << b[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+b[1] << b[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+b[2] << b[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+hs << LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+vs << LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
