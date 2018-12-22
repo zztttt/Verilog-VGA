@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA
-Sat Dec 22 18:57:46 2018
+Sun Dec 23 06:22:09 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -15,9 +15,13 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |vga_display
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |vga_display
+ 13. Parameter Settings for User Entity Instance: screen:screen_ins
+ 14. Port Connectivity Checks: "screen:screen_ins"
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -43,14 +47,14 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Dec 22 18:57:46 2018       ;
+; Analysis & Synthesis Status     ; Successful - Sun Dec 23 06:22:09 2018       ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                   ; VGA                                         ;
 ; Top-level Entity Name           ; vga_display                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 25                                          ;
-; Total pins                      ; 13                                          ;
+; Total registers                 ; 187                                         ;
+; Total pins                      ; 36                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -159,11 +163,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processors 2-6         ; < 0.1%      ;
+;     Processors 7-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -173,41 +178,43 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
 +----------------------------------+-----------------+------------------------+------------------------------------+---------+
 ; vga_display.v                    ; yes             ; User Verilog HDL File  ; C:/SE345/Verilog-VGA/vga_display.v ;         ;
+; screen.v                         ; yes             ; User Verilog HDL File  ; C:/SE345/Verilog-VGA/screen.v      ;         ;
 +----------------------------------+-----------------+------------------------+------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 21           ;
-;                                             ;              ;
-; Combinational ALUT usage for logic          ; 36           ;
-;     -- 7 input functions                    ; 0            ;
-;     -- 6 input functions                    ; 4            ;
-;     -- 5 input functions                    ; 3            ;
-;     -- 4 input functions                    ; 4            ;
-;     -- <=3 input functions                  ; 25           ;
-;                                             ;              ;
-; Dedicated logic registers                   ; 25           ;
-;                                             ;              ;
-; I/O pins                                    ; 13           ;
-; Total DSP Blocks                            ; 0            ;
-; Maximum fan-out node                        ; resetn~input ;
-; Maximum fan-out                             ; 25           ;
-; Total fan-out                               ; 228          ;
-; Average fan-out                             ; 2.62         ;
-+---------------------------------------------+--------------+
++----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary              ;
++---------------------------------------------+------------+
+; Resource                                    ; Usage      ;
++---------------------------------------------+------------+
+; Estimate of Logic utilization (ALMs needed) ; 725        ;
+;                                             ;            ;
+; Combinational ALUT usage for logic          ; 1099       ;
+;     -- 7 input functions                    ; 2          ;
+;     -- 6 input functions                    ; 346        ;
+;     -- 5 input functions                    ; 130        ;
+;     -- 4 input functions                    ; 89         ;
+;     -- <=3 input functions                  ; 532        ;
+;                                             ;            ;
+; Dedicated logic registers                   ; 187        ;
+;                                             ;            ;
+; I/O pins                                    ; 36         ;
+; Total DSP Blocks                            ; 0          ;
+; Maximum fan-out node                        ; always2~14 ;
+; Maximum fan-out                             ; 120        ;
+; Total fan-out                               ; 4977       ;
+; Average fan-out                             ; 3.66       ;
++---------------------------------------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                       ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
-; |vga_display               ; 36 (36)           ; 25 (25)      ; 0                 ; 0          ; 13   ; 0            ; |vga_display        ; work         ;
-+----------------------------+-------------------+--------------+-------------------+------------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                  ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+--------------+
+; |vga_display               ; 1099 (1070)       ; 187 (167)    ; 0                 ; 0          ; 36   ; 0            ; |vga_display                   ; work         ;
+;    |screen:screen_ins|     ; 29 (29)           ; 20 (20)      ; 0                 ; 0          ; 0    ; 0            ; |vga_display|screen:screen_ins ; work         ;
++----------------------------+-------------------+--------------+-------------------+------------+------+--------------+--------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -216,13 +223,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------+----------------------------------------+
 ; Register name                         ; Reason for Removal                     ;
 +---------------------------------------+----------------------------------------+
-; b[0]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; r[2]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; r[1]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; r[0]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; b[2]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; b[1]~reg0                             ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6 ;                                        ;
+; VGA_B[2]~reg0                         ; Stuck at GND due to stuck port data_in ;
+; rec_x[1]                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -231,31 +234,116 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
-; Number of registers using Synchronous Clear  ; 20    ;
+; Total registers                              ; 187   ;
+; Number of registers using Synchronous Clear  ; 78    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 25    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Clock Enable       ; 39    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; rec_x[0]                                ; 12      ;
+; battles_state[1]                        ; 3       ;
+; battles_state[0]                        ; 3       ;
+; battles_state[2]                        ; 3       ;
+; battles_state[8]                        ; 4       ;
+; battles_state[3]                        ; 4       ;
+; battles_state[9]                        ; 3       ;
+; battles_state[4]                        ; 3       ;
+; battles_state[5]                        ; 3       ;
+; battles_state[6]                        ; 3       ;
+; battles_state[7]                        ; 3       ;
+; rec_x[7]                                ; 11      ;
+; rec_x[6]                                ; 10      ;
+; rec_x[3]                                ; 10      ;
+; ball_x[6]                               ; 9       ;
+; ball_x[5]                               ; 9       ;
+; ball_x[2]                               ; 13      ;
+; ball_y[6]                               ; 7       ;
+; ball_y[5]                               ; 8       ;
+; ball_y[2]                               ; 7       ;
+; direction[0]                            ; 1       ;
+; direction[1]                            ; 1       ;
+; Total number of inverted registers = 22 ;         ;
++-----------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |vga_display|screen:screen_ins|Hcnt[8] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |vga_display|VGA_R[1]~reg0             ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |vga_display|screen:screen_ins|Vcnt[9] ;
+; 6:1                ; 27 bits   ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; Yes        ; |vga_display|ball_y[22]                ;
+; 6:1                ; 27 bits   ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; Yes        ; |vga_display|ball_x[16]                ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |vga_display|rec_x[1]                  ;
+; 6:1                ; 26 bits   ; 104 LEs       ; 52 LEs               ; 52 LEs                 ; Yes        ; |vga_display|rec_x[22]                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |vga_display|ball_y[2]                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |vga_display|ball_x[5]                 ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |vga_display|rec_x[3]                  ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |vga_display|VGA_R                     ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |vga_display|VGA_G                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
+
+
 +-----------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |vga_display ;
-+----------------+-------+----------------------------------------------------+
-; Parameter Name ; Value ; Type                                               ;
-+----------------+-------+----------------------------------------------------+
-; UP_BOUND       ; 31    ; Signed Integer                                     ;
-; DOWN_BOUND     ; 510   ; Signed Integer                                     ;
-; LEFT_BOUND     ; 144   ; Signed Integer                                     ;
-; RIGHT_BOUND    ; 783   ; Signed Integer                                     ;
-; up_pos         ; 211   ; Signed Integer                                     ;
-; down_pos       ; 330   ; Signed Integer                                     ;
-; left_pos       ; 384   ; Signed Integer                                     ;
-; right_pos      ; 543   ; Signed Integer                                     ;
-+----------------+-------+----------------------------------------------------+
++----------------+------------+-----------------------------------------------+
+; Parameter Name ; Value      ; Type                                          ;
++----------------+------------+-----------------------------------------------+
+; TOP            ; 0          ; Signed Integer                                ;
+; BOTTOM         ; 0111100000 ; Unsigned Binary                               ;
+; LEFT           ; 0          ; Signed Integer                                ;
+; RIGHT          ; 1010000000 ; Unsigned Binary                               ;
+; battles_num    ; 10         ; Signed Integer                                ;
+; battles_gap    ; 0000110010 ; Unsigned Binary                               ;
+; battle_radius  ; 0000010100 ; Unsigned Binary                               ;
+; battles_y      ; 0000110010 ; Unsigned Binary                               ;
+; ball_radius    ; 0000001010 ; Unsigned Binary                               ;
+; rec_height     ; 0000011110 ; Unsigned Binary                               ;
+; rec_width      ; 0001100100 ; Unsigned Binary                               ;
+; COUNT_200ms    ; 4999999    ; Signed Integer                                ;
+; COUNT_500ms    ; 12999999   ; Signed Integer                                ;
++----------------+------------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: screen:screen_ins ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; visible_area_h ; 640   ; Signed Integer                        ;
+; front_porch_h  ; 16    ; Signed Integer                        ;
+; sync_pulse_h   ; 96    ; Signed Integer                        ;
+; back_porch_h   ; 48    ; Signed Integer                        ;
+; whole_line_h   ; 800   ; Signed Integer                        ;
+; visible_area_v ; 480   ; Signed Integer                        ;
+; front_porch_v  ; 10    ; Signed Integer                        ;
+; sync_pulse_v   ; 2     ; Signed Integer                        ;
+; back_porch_v   ; 33    ; Signed Integer                        ;
+; whole_line_v   ; 525   ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "screen:screen_ins"                                                                                                                                                       ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                                  ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hcnt ; Output ; Warning  ; Output or bidir port (10 bits) is smaller than the port expression (32 bits) it drives.  The 22 most-significant bit(s) in the port expression will be connected to GND. ;
+; Vcnt ; Output ; Warning  ; Output or bidir port (10 bits) is smaller than the port expression (32 bits) it drives.  The 22 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -263,7 +351,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -273,7 +361,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sat Dec 22 18:57:43 2018
+    Info: Processing started: Sun Dec 23 06:22:02 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Info (12021): Found 1 design units, including 1 entities, in source file sevenseg.v
@@ -282,32 +370,63 @@ Info (12021): Found 1 design units, including 1 entities, in source file out_por
     Info (12023): Found entity 1: out_port_seg
 Info (12021): Found 1 design units, including 1 entities, in source file vga_display.v
     Info (12023): Found entity 1: vga_display
+Info (12021): Found 1 design units, including 1 entities, in source file output_files/v.bdf
+    Info (12023): Found entity 1: V
+Info (12021): Found 1 design units, including 1 entities, in source file screen.v
+    Info (12023): Found entity 1: screen
 Warning (10227): Verilog HDL Port Declaration warning at sevenseg.v(4): data type declaration for "ledsegments" declares packed dimensions but the port declaration declaration does not
 Info (10499): HDL info at sevenseg.v(3): see declaration for object "ledsegments"
 Info (12127): Elaborating entity "vga_display" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at vga_display.v(29): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at vga_display.v(32): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at vga_display.v(40): truncated value with size 32 to match size of target (10)
-Warning (10230): Verilog HDL assignment warning at vga_display.v(43): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at vga_display.v(52): truncated value with size 32 to match size of target (10)
+Warning (10036): Verilog HDL or VHDL warning at vga_display.v(42): object "y_top_state" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_display.v(42): object "y_bottom_state" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at vga_display.v(69): object "c" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at vga_display.v(206): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "screen" for hierarchy "screen:screen_ins"
+Warning (10230): Verilog HDL assignment warning at screen.v(40): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at screen.v(44): truncated value with size 32 to match size of target (10)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "r[0]" is stuck at GND
-    Warning (13410): Pin "r[1]" is stuck at GND
-    Warning (13410): Pin "r[2]" is stuck at GND
-    Warning (13410): Pin "b[0]" is stuck at GND
-    Warning (13410): Pin "b[1]" is stuck at GND
-    Warning (13410): Pin "b[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored assignments for entity "simple_vga_game" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity simple_vga_game -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity simple_vga_game -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 52 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 39 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4740 megabytes
-    Info: Processing ended: Sat Dec 22 18:57:46 2018
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Warning (21074): Design contains 3 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "up"
+    Warning (15610): No output dependent on input pin "sw9"
+    Warning (15610): No output dependent on input pin "sw8"
+Info (21057): Implemented 1174 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 1138 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 4739 megabytes
+    Info: Processing ended: Sun Dec 23 06:22:09 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 

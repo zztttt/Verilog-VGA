@@ -1,5 +1,5 @@
 Flow report for VGA
-Sat Dec 22 18:58:47 2018
+Sun Dec 23 06:23:23 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -40,16 +40,16 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Dec 22 18:58:47 2018       ;
+; Flow Status                     ; Successful - Sun Dec 23 06:23:23 2018       ;
 ; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
 ; Revision Name                   ; VGA                                         ;
 ; Top-level Entity Name           ; vga_display                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Preliminary                                 ;
-; Logic utilization (in ALMs)     ; 32 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 29                                          ;
-; Total pins                      ; 13 / 457 ( 3 % )                            ;
+; Logic utilization (in ALMs)     ; 676 / 32,070 ( 2 % )                        ;
+; Total registers                 ; 187                                         ;
+; Total pins                      ; 36 / 457 ( 8 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -67,28 +67,31 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/22/2018 18:57:44 ;
+; Start date & time ; 12/23/2018 06:22:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA                 ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 154027290082112.154547626401792 ; --            ; --          ; --             ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                        ; --            ; vga_display ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; vga_display ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; vga_display ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; vga_display                     ; VGA           ; --          ; --             ;
-+-------------------------------------+---------------------------------+---------------+-------------+----------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                         ;
++-------------------------------------+---------------------------------+---------------+-----------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name     ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+-----------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 154027290082112.154551732301276 ; --            ; --              ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                            ; --            ; --              ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)          ; <None>        ; --              ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --              ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --              ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; simple_vga_game ; Top            ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; vga_display     ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; simple_vga_game ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; vga_display     ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; simple_vga_game ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; vga_display     ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --              ; --             ;
+; TOP_LEVEL_ENTITY                    ; vga_display                     ; VGA           ; --              ; --             ;
++-------------------------------------+---------------------------------+---------------+-----------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -96,12 +99,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4740 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:35     ; 2.0                     ; 6213 MB             ; 00:01:01                           ;
-; Assembler                 ; 00:00:11     ; 1.0                     ; 4783 MB             ; 00:00:11                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 4977 MB             ; 00:00:07                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4642 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:58     ; --                      ; --                  ; 00:01:24                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4739 MB             ; 00:00:07                           ;
+; Fitter                    ; 00:00:45     ; 2.5                     ; 6260 MB             ; 00:01:15                           ;
+; Assembler                 ; 00:00:12     ; 1.0                     ; 4795 MB             ; 00:00:11                           ;
+; TimeQuest Timing Analyzer ; 00:00:09     ; 1.7                     ; 5035 MB             ; 00:00:12                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4654 MB             ; 00:00:02                           ;
+; Total                     ; 00:01:14     ; --                      ; --                  ; 00:01:47                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
