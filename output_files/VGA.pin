@@ -364,7 +364,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AJ16      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ17      :        :                   :         : 4A        :                
 GND                          : AJ18      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ19      :        :                   :         : 4A        :                
-up                           : AJ20      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ21      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ22      :        :                   :         : 4A        :                
 VCCIO4A                      : AJ23      : power  :                   : 2.5V    : 4A        :                
@@ -410,7 +410,7 @@ VCCIO8A                      : B4        : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : B5        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B6        :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : B7        :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : B8        :        :                   :         : 8A        :                
+up                           : B8        : input  : 2.5 V             :         : 8A        : N              
 GND                          : B9        : gnd    :                   :         :           :                
 VREFB8AN0                    : B10       : power  :                   :         : 8A        :                
 HS                           : B11       : output : 2.5 V             :         : 8A        : Y              
