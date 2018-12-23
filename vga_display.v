@@ -33,7 +33,9 @@ module vga_display (
 
 	
 	reg[31:0] step;
-	reg[31:0] speed;
+	//reg[31:0] speed;
+	reg[31:0] speed_x;
+	reg[31:0] speed_y;
 	
 	reg finish;
 	reg[31:0] score;
@@ -70,8 +72,10 @@ module vga_display (
 		battles_state <= ~(32'b0);
 		
 		step <= 10'd40;
-		speed <= 10'd10;
-		direction <= 2'b11;
+		//speed <= 10'd10;
+		speed_x <= 10'd10;
+		speed_y <= 10'd20;
+		direction <= 2'b10;
 		
 		ball_x <= 10'd100;
 		ball_y <= 10'd100;
@@ -158,7 +162,7 @@ module vga_display (
 		//crash the left Vertical edge
 		if(ball_y >= rec_y && ball_y+ball_radius <= rec_y+rec_height && ball_x > rec_x && ball_x+ball_radius < rec_x)begin
 			//change x
-			ball_x = rec_x - ball_radius - speed;
+			ball_x = rec_x - ball_radius - speed_x;
 			direction[1] = ~direction[1];
 		end
 		//crash battle
@@ -207,64 +211,64 @@ module vga_display (
 			2'b10:begin
 				//ball_x = (ball_y+speed<RIGHT)?(ball_x + speed) % (RIGHT - ball_radius):ball_x;
 				//ball_y = (ball_y>speed)?(ball_y - speed) % (BOTTOM - ball_radius):ball_y;
-				if(ball_x + speed <= RIGHT)begin
-					ball_x = ball_x + speed;
+				if(ball_x + speed_x <= RIGHT)begin
+					ball_x = ball_x + speed_x;
 				end else  begin
-					ball_x = RIGHT - speed;
+					ball_x = RIGHT - speed_x;
 					direction[1] = ~direction[1];
 				end
-				if(ball_y - speed > 1)begin
-					ball_y = ball_y - speed;
+				if(ball_y - speed_y > 1)begin
+					ball_y = ball_y - speed_y;
 				end else begin
-					ball_y = TOP + speed;
+					ball_y = TOP + speed_y;
 					direction[0] = ~direction[0];
 				end
 			end
 			2'b00:begin
-				if(ball_x - speed > 0)begin
-					ball_x = ball_x - speed;
+				if(ball_x - speed_x > 0)begin
+					ball_x = ball_x - speed_x;
 				end else  begin
-					ball_x = LEFT + speed;
+					ball_x = LEFT + speed_x;
 					direction[1] = ~direction[1];
 				end
-				if(ball_y - speed > 1)begin
-					ball_y = ball_y - speed;
+				if(ball_y - speed_y > 1)begin
+					ball_y = ball_y - speed_y;
 				end else begin
-					ball_y = TOP + speed;
+					ball_y = TOP + speed_y;
 					direction[0] = ~direction[0];
 				end
 			end
 			2'b01:begin
-				if(ball_x - speed > 0)begin
-					ball_x = ball_x - speed;
+				if(ball_x - speed_x > 0)begin
+					ball_x = ball_x - speed_x;
 				end else  begin
-					ball_x = LEFT + speed;
+					ball_x = LEFT + speed_x;
 					direction[1] = ~direction[1];
 				end
-				if(ball_y + speed <= BOTTOM)begin
-					ball_y = ball_y + speed;
+				if(ball_y + speed_y <= BOTTOM)begin
+					ball_y = ball_y + speed_y;
 				end else begin
-					ball_y = BOTTOM - speed;
+					ball_y = BOTTOM - speed_y;
 					direction[0] = ~direction[0];
 				end
 			end
 			2'b11:begin
-				if(ball_x + speed < RIGHT)begin
-					ball_x = ball_x + speed;
+				if(ball_x + speed_x < RIGHT)begin
+					ball_x = ball_x + speed_x;
 				end else  begin
-					ball_x = RIGHT - speed;
+					ball_x = RIGHT - speed_x;
 					direction[1] = ~direction[1];
 				end
-				if(ball_y + speed < BOTTOM)begin
-					ball_y = ball_y + speed;
+				if(ball_y + speed_y < BOTTOM)begin
+					ball_y = ball_y + speed_y;
 				end else begin
-					ball_y = BOTTOM - speed;
+					ball_y = BOTTOM - speed_y;
 					direction[0] = ~direction[0];
 				end
 			end
 			default:begin
-				ball_x = (ball_x + speed) % RIGHT;
-				ball_y = (ball_y + speed) % BOTTOM;
+				ball_x = (ball_x + speed_x) % RIGHT;
+				ball_y = (ball_y + speed_y) % BOTTOM;
 			end
 		endcase
 		//change direction

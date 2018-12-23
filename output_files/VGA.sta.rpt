@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for VGA
-Sun Dec 23 21:29:57 2018
+Sun Dec 23 21:40:22 2018
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
 
 
@@ -123,12 +123,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 2.11        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ; < 0.1%      ;
+;     Processors 2-6         ;  22.2%      ;
 ;     Processors 7-12        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -149,9 +149,9 @@ applicable agreement for further details.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 50.45 MHz  ; 50.45 MHz       ; clk_200ms  ;      ;
-; 130.82 MHz ; 130.82 MHz      ; clk        ;      ;
-; 162.71 MHz ; 162.71 MHz      ; clk_25M    ;      ;
+; 53.69 MHz  ; 53.69 MHz       ; clk_200ms  ;      ;
+; 125.93 MHz ; 125.93 MHz      ; clk        ;      ;
+; 158.05 MHz ; 158.05 MHz      ; clk_25M    ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -167,9 +167,9 @@ HTML report is unavailable in plain text report export.
 +-----------+---------+---------------+
 ; Clock     ; Slack   ; End Point TNS ;
 +-----------+---------+---------------+
-; clk_200ms ; -18.821 ; -1817.370     ;
-; clk_25M   ; -12.243 ; -344.058      ;
-; clk       ; -6.644  ; -281.229      ;
+; clk_200ms ; -17.624 ; -1729.573     ;
+; clk_25M   ; -11.362 ; -342.016      ;
+; clk       ; -6.941  ; -292.812      ;
 +-----------+---------+---------------+
 
 
@@ -178,9 +178,9 @@ HTML report is unavailable in plain text report export.
 +-----------+--------+---------------+
 ; Clock     ; Slack  ; End Point TNS ;
 +-----------+--------+---------------+
-; clk       ; -1.674 ; -3.031        ;
-; clk_200ms ; 0.377  ; 0.000         ;
-; clk_25M   ; 0.874  ; 0.000         ;
+; clk       ; -1.536 ; -3.063        ;
+; clk_200ms ; 0.379  ; 0.000         ;
+; clk_25M   ; 0.903  ; 0.000         ;
 +-----------+--------+---------------+
 
 
@@ -201,9 +201,9 @@ No paths to report.
 +-----------+--------+------------------------------+
 ; Clock     ; Slack  ; End Point TNS                ;
 +-----------+--------+------------------------------+
-; clk       ; -0.715 ; -35.743                      ;
-; clk_200ms ; -0.394 ; -65.177                      ;
-; clk_25M   ; -0.394 ; -26.118                      ;
+; clk       ; -0.734 ; -35.854                      ;
+; clk_200ms ; -0.394 ; -65.141                      ;
+; clk_25M   ; -0.394 ; -24.933                      ;
 +-----------+--------+------------------------------+
 
 
@@ -212,12 +212,12 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; key[*]    ; clk        ; 4.974 ; 5.687 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; 3.819 ; 3.956 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 4.974 ; 5.687 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 0.293 ; 1.094 ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 0.293 ; 1.094 ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; 5.242 ; 5.858 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 3.176 ; 3.832 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 2.707 ; 3.227 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 3.176 ; 3.832 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 0.719 ; 1.444 ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 0.719 ; 1.444 ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; 5.401 ; 6.050 ; Rise       ; clk_25M         ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -226,12 +226,12 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; key[*]    ; clk        ; 0.110  ; -0.397 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; -0.366 ; -0.968 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 0.110  ; -0.397 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 3.213  ; 2.607  ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 3.213  ; 2.607  ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; -3.219 ; -3.880 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; -0.091 ; -0.640 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; -0.091 ; -0.699 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; -0.105 ; -0.640 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 2.428  ; 1.909  ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 2.428  ; 1.909  ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; -3.604 ; -4.162 ; Rise       ; clk_25M         ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -240,53 +240,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 70.851 ; 72.304 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 70.851 ; 72.304 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 70.437 ; 71.651 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 69.193 ; 69.579 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 70.336 ; 71.387 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 69.811 ; 70.741 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 69.823 ; 70.848 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 70.519 ; 69.821 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 75.150 ; 75.293 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 74.468 ; 74.919 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 74.453 ; 75.293 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 74.011 ; 74.562 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 74.073 ; 74.487 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 74.228 ; 74.865 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 74.299 ; 74.773 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 75.150 ; 74.569 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 8.515  ; 8.820  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 8.645  ; 9.861  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 8.645  ; 9.861  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 8.567  ; 9.731  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 8.517  ; 9.695  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 8.518  ; 9.497  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 8.571  ; 9.764  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 8.433  ; 9.517  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 7.286  ; 7.692  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 11.059 ; 10.975 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 5.581  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 9.212  ; 10.601 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 9.204  ; 10.330 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 9.109  ; 10.162 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 9.103  ; 10.350 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 8.871  ; 9.897  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 7.743  ; 8.191  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 7.827  ; 8.350  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 8.529  ; 9.591  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 9.212  ; 10.601 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 10.149 ; 11.942 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 7.576  ; 8.182  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 8.791  ; 10.039 ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 7.522  ; 8.077  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 9.061  ; 10.449 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 7.803  ; 8.676  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 8.388  ; 9.381  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 10.149 ; 11.942 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 9.085  ; 10.318 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 10.939 ; 11.795 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 6.105  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 71.735 ; 70.359 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 68.931 ; 69.283 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 68.670 ; 69.011 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 68.524 ; 68.794 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 69.154 ; 69.666 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 68.144 ; 68.801 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 68.471 ; 68.717 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 71.735 ; 70.359 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 79.843 ; 80.385 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 79.425 ; 80.187 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 79.333 ; 80.385 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 78.138 ; 78.456 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 78.462 ; 78.721 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 78.841 ; 79.460 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 78.880 ; 79.219 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 79.843 ; 79.143 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 8.497  ; 9.192  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 7.825  ; 8.780  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 7.432  ; 8.326  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 7.127  ; 7.626  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 7.441  ; 8.407  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 7.016  ; 7.473  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 7.825  ; 8.780  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 7.542  ; 8.132  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 7.002  ; 7.401  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 11.107 ; 11.455 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 6.182  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 8.952  ; 10.323 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 8.804  ; 9.849  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 8.748  ; 9.870  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 7.267  ; 7.806  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 7.249  ; 7.595  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 8.952  ; 10.323 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 8.395  ; 9.341  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 8.573  ; 9.514  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 8.037  ; 9.013  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 8.913  ; 10.254 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 6.982  ; 7.434  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 7.414  ; 8.289  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 8.011  ; 8.898  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 7.422  ; 8.231  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 7.984  ; 8.984  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 7.311  ; 7.896  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 8.626  ; 9.627  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 8.913  ; 10.254 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 10.232 ; 11.198 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 7.085  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -295,53 +295,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 11.756 ; 11.838 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 13.147 ; 14.226 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 12.577 ; 13.540 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 11.756 ; 11.838 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 12.770 ; 13.616 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 11.992 ; 12.889 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 12.208 ; 13.094 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 12.747 ; 12.353 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 12.355 ; 12.627 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 12.974 ; 13.254 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 12.938 ; 13.376 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 12.699 ; 13.377 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 12.355 ; 12.627 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 13.197 ; 13.218 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 12.968 ; 12.900 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 13.873 ; 13.049 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 6.636  ; 6.990  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 6.609  ; 6.960  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 7.816  ; 8.864  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 7.771  ; 8.785  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 7.739  ; 8.820  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 7.727  ; 8.587  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 7.758  ; 8.815  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 7.642  ; 8.602  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 6.609  ; 6.960  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 7.622  ; 8.153  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 5.196  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 7.011  ; 7.384  ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 8.348  ; 9.331  ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 8.261  ; 9.198  ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 8.238  ; 9.299  ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 8.049  ; 8.964  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 7.011  ; 7.384  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 7.088  ; 7.537  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 7.708  ; 8.632  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 8.358  ; 9.594  ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 6.813  ; 7.299  ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 6.853  ; 7.358  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 7.956  ; 9.046  ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 6.813  ; 7.299  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 8.196  ; 9.399  ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 7.104  ; 7.908  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 7.612  ; 8.495  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 9.218  ; 10.819 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 8.213  ; 9.280  ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 8.406  ; 9.286  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 5.619  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 11.457 ; 11.661 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 11.868 ; 12.170 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 11.610 ; 11.844 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 11.496 ; 11.904 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 12.058 ; 12.475 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 11.481 ; 11.661 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 11.457 ; 12.266 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 13.913 ; 13.011 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 12.114 ; 12.325 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 13.069 ; 13.603 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 13.094 ; 13.670 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 12.144 ; 12.674 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 12.114 ; 12.325 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 12.952 ; 12.942 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 12.869 ; 12.714 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 13.716 ; 12.816 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 7.248  ; 7.919  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 6.331  ; 6.666  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 6.774  ; 7.575  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 6.437  ; 6.852  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 6.749  ; 7.598  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 6.336  ; 6.715  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 7.103  ; 7.957  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 6.809  ; 7.271  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 6.331  ; 6.666  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 8.535  ; 9.211  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 5.786  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 6.550  ; 6.885  ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 7.975  ; 8.872  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 7.900  ; 8.841  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 6.550  ; 6.980  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 6.584  ; 6.885  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 8.150  ; 9.376  ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 7.605  ; 8.438  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 7.758  ; 8.548  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 7.301  ; 8.151  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 6.310  ; 6.680  ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 6.310  ; 6.680  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 6.750  ; 7.542  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 7.234  ; 7.975  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 6.745  ; 7.488  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 7.258  ; 8.155  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 6.595  ; 7.070  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 7.810  ; 8.685  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 8.080  ; 9.261  ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 7.944  ; 8.771  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 6.615  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -357,7 +357,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 9.071 ;    ;    ; 9.485 ;
 ; sw[5]      ; led[5]      ; 7.144 ;    ;    ; 7.395 ;
 ; sw[6]      ; led[6]      ; 9.206 ;    ;    ; 9.422 ;
-; sw[7]      ; led[7]      ; 7.923 ;    ;    ; 8.238 ;
+; sw[7]      ; led[7]      ; 8.092 ;    ;    ; 8.549 ;
 ; sw[8]      ; led[8]      ; 7.489 ;    ;    ; 7.749 ;
 ; sw[9]      ; led[9]      ; 7.525 ;    ;    ; 7.772 ;
 +------------+-------------+-------+----+----+-------+
@@ -375,7 +375,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 7.376 ;    ;    ; 7.668 ;
 ; sw[5]      ; led[5]      ; 6.613 ;    ;    ; 6.855 ;
 ; sw[6]      ; led[6]      ; 7.547 ;    ;    ; 7.738 ;
-; sw[7]      ; led[7]      ; 7.323 ;    ;    ; 7.592 ;
+; sw[7]      ; led[7]      ; 7.440 ;    ;    ; 7.773 ;
 ; sw[8]      ; led[8]      ; 6.940 ;    ;    ; 7.190 ;
 ; sw[9]      ; led[9]      ; 6.952 ;    ;    ; 7.161 ;
 +------------+-------------+-------+----+----+-------+
@@ -392,9 +392,9 @@ No synchronizer chains to report.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 50.07 MHz  ; 50.07 MHz       ; clk_200ms  ;      ;
-; 128.12 MHz ; 128.12 MHz      ; clk        ;      ;
-; 162.73 MHz ; 162.73 MHz      ; clk_25M    ;      ;
+; 53.54 MHz  ; 53.54 MHz       ; clk_200ms  ;      ;
+; 122.09 MHz ; 122.09 MHz      ; clk        ;      ;
+; 158.43 MHz ; 158.43 MHz      ; clk_25M    ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -404,9 +404,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+---------+---------------+
 ; Clock     ; Slack   ; End Point TNS ;
 +-----------+---------+---------------+
-; clk_200ms ; -18.974 ; -1838.055     ;
-; clk_25M   ; -12.226 ; -346.399      ;
-; clk       ; -6.805  ; -285.370      ;
+; clk_200ms ; -17.678 ; -1741.254     ;
+; clk_25M   ; -11.408 ; -344.019      ;
+; clk       ; -7.191  ; -298.678      ;
 +-----------+---------+---------------+
 
 
@@ -415,9 +415,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------+--------+---------------+
 ; Clock     ; Slack  ; End Point TNS ;
 +-----------+--------+---------------+
-; clk       ; -1.572 ; -2.793        ;
-; clk_200ms ; 0.390  ; 0.000         ;
-; clk_25M   ; 0.859  ; 0.000         ;
+; clk       ; -1.483 ; -2.904        ;
+; clk_200ms ; 0.392  ; 0.000         ;
+; clk_25M   ; 0.884  ; 0.000         ;
 +-----------+--------+---------------+
 
 
@@ -438,9 +438,9 @@ No paths to report.
 +-----------+--------+-----------------------------+
 ; Clock     ; Slack  ; End Point TNS               ;
 +-----------+--------+-----------------------------+
-; clk       ; -0.724 ; -39.310                     ;
-; clk_200ms ; -0.394 ; -63.756                     ;
-; clk_25M   ; -0.394 ; -25.934                     ;
+; clk       ; -0.744 ; -39.630                     ;
+; clk_200ms ; -0.394 ; -64.829                     ;
+; clk_25M   ; -0.394 ; -24.894                     ;
 +-----------+--------+-----------------------------+
 
 
@@ -449,12 +449,12 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; key[*]    ; clk        ; 4.734 ; 5.579 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; 3.580 ; 3.721 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 4.734 ; 5.579 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 0.213 ; 1.018 ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 0.213 ; 1.018 ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; 5.236 ; 5.824 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 2.790 ; 3.706 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 2.441 ; 2.970 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 2.790 ; 3.706 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 0.601 ; 1.343 ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 0.601 ; 1.343 ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; 5.327 ; 5.949 ; Rise       ; clk_25M         ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -463,12 +463,12 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; key[*]    ; clk        ; 0.358  ; -0.147 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; -0.197 ; -0.797 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 0.358  ; -0.147 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 3.226  ; 2.637  ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 3.226  ; 2.637  ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; -3.142 ; -3.750 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 0.164  ; -0.385 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 0.083  ; -0.502 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 0.164  ; -0.385 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 2.500  ; 1.984  ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 2.500  ; 1.984  ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; -3.547 ; -4.053 ; Rise       ; clk_25M         ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -477,53 +477,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 73.228 ; 74.789 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 73.228 ; 74.789 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 72.825 ; 74.106 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 71.403 ; 71.874 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 72.621 ; 73.808 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 72.142 ; 73.147 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 72.135 ; 73.265 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 72.888 ; 72.092 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 77.564 ; 77.700 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 76.756 ; 77.276 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 76.768 ; 77.700 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 76.337 ; 76.965 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 76.432 ; 76.898 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 76.587 ; 77.268 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 76.632 ; 77.174 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 77.564 ; 76.922 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 8.084  ; 8.449  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 8.385  ; 9.702  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 8.385  ; 9.702  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 8.324  ; 9.560  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 8.342  ; 9.574  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 8.236  ; 9.297  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 8.360  ; 9.610  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 8.209  ; 9.373  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 6.851  ; 7.283  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 10.654 ; 10.594 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 5.245  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 9.049  ; 10.497 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 8.929  ; 10.151 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 8.873  ; 10.006 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 8.855  ; 10.185 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 8.602  ; 9.719  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 7.288  ; 7.799  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 7.399  ; 7.974  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 8.284  ; 9.426  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 9.049  ; 10.497 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 10.054 ; 11.875 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 7.164  ; 7.813  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 8.589  ; 9.893  ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 7.099  ; 7.706  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 8.881  ; 10.317 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 7.528  ; 8.486  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 8.156  ; 9.219  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 10.054 ; 11.875 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 8.842  ; 10.152 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 10.712 ; 11.625 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 5.805  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 74.634 ; 73.182 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 71.604 ; 72.068 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 71.333 ; 71.769 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 71.213 ; 71.565 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 71.832 ; 72.454 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 70.756 ; 71.556 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 71.159 ; 71.490 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 74.634 ; 73.182 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 82.434 ; 82.977 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 81.930 ; 82.767 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 81.845 ; 82.977 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 80.565 ; 80.997 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 80.931 ; 81.263 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 81.336 ; 82.039 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 81.359 ; 81.773 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 82.434 ; 81.668 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 8.229  ; 9.015  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 7.592  ; 8.593  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 7.124  ; 8.117  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 6.710  ; 7.280  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 7.178  ; 8.218  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 6.613  ; 7.122  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 7.592  ; 8.593  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 7.127  ; 7.770  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 6.625  ; 7.055  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 10.843 ; 11.269 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 6.006  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 8.757  ; 10.179 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 8.516  ; 9.656  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 8.455  ; 9.677  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 6.859  ; 7.456  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 6.824  ; 7.236  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 8.757  ; 10.179 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 8.106  ; 9.160  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 8.253  ; 9.285  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 7.753  ; 8.815  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 8.726  ; 10.115 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 6.575  ; 7.095  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 7.165  ; 8.096  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 7.716  ; 8.671  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 7.173  ; 8.041  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 7.726  ; 8.801  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 6.878  ; 7.548  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 8.352  ; 9.450  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 8.726  ; 10.115 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 10.026 ; 11.034 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 6.978  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -532,53 +532,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 11.450 ; 11.568 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 12.975 ; 14.107 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 12.348 ; 13.390 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 11.450 ; 11.568 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 12.514 ; 13.450 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 11.713 ; 12.744 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 11.979 ; 12.991 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 12.527 ; 12.098 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 12.102 ; 12.430 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 12.669 ; 13.010 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 12.662 ; 13.178 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 12.442 ; 13.263 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 12.102 ; 12.430 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 12.994 ; 13.027 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 12.748 ; 12.704 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 13.756 ; 12.801 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 6.219  ; 6.603  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 6.197  ; 6.546  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 7.563  ; 8.683  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 7.531  ; 8.594  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 7.563  ; 8.655  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 7.453  ; 8.373  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 7.551  ; 8.636  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 7.420  ; 8.429  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 6.197  ; 6.546  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 7.236  ; 7.811  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 4.875  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 6.581  ; 6.994  ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 8.078  ; 9.132  ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 8.027  ; 9.016  ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 7.992  ; 9.113  ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 7.789  ; 8.763  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 6.581  ; 6.994  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 6.684  ; 7.153  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 7.470  ; 8.453  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 8.191  ; 9.449  ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 6.413  ; 6.915  ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 6.459  ; 6.969  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 7.755  ; 8.879  ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 6.413  ; 6.915  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 8.013  ; 9.227  ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 6.835  ; 7.688  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 7.384  ; 8.311  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 9.111  ; 10.693 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 7.975  ; 9.085  ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 8.201  ; 9.105  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 5.311  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 11.118 ; 11.409 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 11.520 ; 11.924 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 11.247 ; 11.593 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 11.152 ; 11.697 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 11.712 ; 12.249 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 11.118 ; 11.409 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 11.120 ; 12.051 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 13.797 ; 12.778 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 11.807 ; 12.093 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 12.796 ; 13.405 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 12.835 ; 13.477 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 11.833 ; 12.510 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 11.807 ; 12.093 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 12.750 ; 12.746 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 12.634 ; 12.488 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 13.593 ; 12.560 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 6.949  ; 7.666  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 5.960  ; 6.313  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 6.479  ; 7.353  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 6.046  ; 6.506  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 6.499  ; 7.388  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 5.960  ; 6.368  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 6.876  ; 7.749  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 6.417  ; 6.920  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 5.974  ; 6.313  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 8.230  ; 8.997  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 5.610  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 6.168  ; 6.517  ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 7.694  ; 8.676  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 7.619  ; 8.654  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 6.168  ; 6.639  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 6.183  ; 6.517  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 7.955  ; 9.196  ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 7.327  ; 8.243  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 7.450  ; 8.321  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 7.025  ; 7.941  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 5.923  ; 6.340  ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 5.923  ; 6.340  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 6.510  ; 7.331  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 6.949  ; 7.739  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 6.503  ; 7.273  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 7.005  ; 7.948  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 6.190  ; 6.733  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 7.544  ; 8.487  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 7.893  ; 9.095  ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 7.698  ; 8.549  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 6.475  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -594,7 +594,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 8.766 ;    ;    ; 9.268 ;
 ; sw[5]      ; led[5]      ; 6.794 ;    ;    ; 7.152 ;
 ; sw[6]      ; led[6]      ; 8.813 ;    ;    ; 9.147 ;
-; sw[7]      ; led[7]      ; 7.596 ;    ;    ; 8.011 ;
+; sw[7]      ; led[7]      ; 7.781 ;    ;    ; 8.337 ;
 ; sw[8]      ; led[8]      ; 7.154 ;    ;    ; 7.513 ;
 ; sw[9]      ; led[9]      ; 7.180 ;    ;    ; 7.529 ;
 +------------+-------------+-------+----+----+-------+
@@ -612,7 +612,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 7.113 ;    ;    ; 7.487 ;
 ; sw[5]      ; led[5]      ; 6.283 ;    ;    ; 6.619 ;
 ; sw[6]      ; led[6]      ; 7.203 ;    ;    ; 7.504 ;
-; sw[7]      ; led[7]      ; 7.019 ;    ;    ; 7.373 ;
+; sw[7]      ; led[7]      ; 7.149 ;    ;    ; 7.568 ;
 ; sw[8]      ; led[8]      ; 6.624 ;    ;    ; 6.957 ;
 ; sw[9]      ; led[9]      ; 6.627 ;    ;    ; 6.926 ;
 +------------+-------------+-------+----+----+-------+
@@ -626,13 +626,13 @@ No synchronizer chains to report.
 
 +-------------------------------------+
 ; Fast 1100mV 85C Model Setup Summary ;
-+-----------+---------+---------------+
-; Clock     ; Slack   ; End Point TNS ;
-+-----------+---------+---------------+
-; clk_200ms ; -10.332 ; -996.588      ;
-; clk_25M   ; -7.025  ; -190.307      ;
-; clk       ; -3.532  ; -140.989      ;
-+-----------+---------+---------------+
++-----------+--------+----------------+
+; Clock     ; Slack  ; End Point TNS  ;
++-----------+--------+----------------+
+; clk_200ms ; -9.994 ; -989.048       ;
+; clk_25M   ; -6.320 ; -183.627       ;
+; clk       ; -3.638 ; -142.507       ;
++-----------+--------+----------------+
 
 
 +------------------------------------+
@@ -640,9 +640,9 @@ No synchronizer chains to report.
 +-----------+--------+---------------+
 ; Clock     ; Slack  ; End Point TNS ;
 +-----------+--------+---------------+
-; clk       ; -0.892 ; -1.523        ;
-; clk_200ms ; 0.182  ; 0.000         ;
-; clk_25M   ; 0.309  ; 0.000         ;
+; clk       ; -0.937 ; -1.630        ;
+; clk_200ms ; 0.181  ; 0.000         ;
+; clk_25M   ; 0.446  ; 0.000         ;
 +-----------+--------+---------------+
 
 
@@ -663,9 +663,9 @@ No paths to report.
 +-----------+--------+------------------------------+
 ; Clock     ; Slack  ; End Point TNS                ;
 +-----------+--------+------------------------------+
-; clk       ; -0.639 ; -7.153                       ;
-; clk_25M   ; -0.061 ; -0.586                       ;
-; clk_200ms ; -0.041 ; -3.734                       ;
+; clk       ; -0.684 ; -7.137                       ;
+; clk_25M   ; -0.009 ; -0.117                       ;
+; clk_200ms ; 0.133  ; 0.000                        ;
 +-----------+--------+------------------------------+
 
 
@@ -674,12 +674,12 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; key[*]    ; clk        ; 3.005 ; 4.014 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; 2.441 ; 2.830 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 3.005 ; 4.014 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 0.079 ; 0.995 ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 0.079 ; 0.995 ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; 3.066 ; 3.797 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 1.881 ; 2.714 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 1.647 ; 2.313 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 1.881 ; 2.714 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 0.338 ; 1.226 ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 0.338 ; 1.226 ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; 3.121 ; 3.853 ; Rise       ; clk_25M         ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -688,12 +688,12 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; key[*]    ; clk        ; 0.047  ; -0.643 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; -0.250 ; -1.051 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 0.047  ; -0.643 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 1.785  ; 1.014  ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 1.785  ; 1.014  ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; -1.724 ; -2.522 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; -0.025 ; -0.817 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; -0.025 ; -0.817 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; -0.081 ; -0.825 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 1.366  ; 0.648  ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 1.366  ; 0.648  ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; -2.021 ; -2.718 ; Rise       ; clk_25M         ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -702,53 +702,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 40.233 ; 41.539 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 40.233 ; 41.539 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 39.854 ; 41.022 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 38.904 ; 39.353 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 39.770 ; 40.744 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 39.386 ; 40.325 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 39.455 ; 40.407 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 40.090 ; 39.357 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 43.443 ; 43.509 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 42.724 ; 43.180 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 42.796 ; 43.509 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 42.488 ; 42.971 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 42.506 ; 42.938 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 42.578 ; 43.172 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 42.625 ; 43.119 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 43.443 ; 42.859 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 5.264  ; 5.535  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 5.606  ; 6.725  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 5.570  ; 6.725  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 5.571  ; 6.678  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 5.606  ; 6.725  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 5.463  ; 6.453  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 5.552  ; 6.681  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 5.453  ; 6.482  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 4.480  ; 4.894  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 6.875  ; 6.888  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 3.479  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 6.079  ; 7.385  ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 5.961  ; 7.076  ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 5.873  ; 6.948  ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 5.920  ; 7.107  ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 5.680  ; 6.740  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 4.786  ; 5.268  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 4.835  ; 5.391  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 5.482  ; 6.533  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 6.079  ; 7.385  ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 6.773  ; 8.481  ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 4.685  ; 5.218  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 5.722  ; 6.921  ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 4.638  ; 5.164  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 5.933  ; 7.218  ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 4.985  ; 5.840  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 5.445  ; 6.406  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 6.773  ; 8.481  ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 5.880  ; 7.077  ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 7.107  ; 7.839  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 3.968  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 39.929 ; 38.633 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 37.454 ; 37.927 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 37.271 ; 37.730 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 37.223 ; 37.604 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 37.618 ; 38.216 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 37.003 ; 37.592 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 37.163 ; 37.519 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 39.929 ; 38.633 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 47.074 ; 47.417 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 46.550 ; 47.292 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 46.488 ; 47.417 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 45.502 ; 45.964 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 45.818 ; 46.146 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 46.100 ; 46.745 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 46.124 ; 46.514 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 47.074 ; 46.399 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 5.389  ; 6.045  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 5.029  ; 5.957  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 4.718  ; 5.585  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 4.399  ; 4.893  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 4.767  ; 5.687  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 4.312  ; 4.790  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 5.029  ; 5.957  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 4.615  ; 5.220  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 4.388  ; 4.788  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 7.229  ; 7.551  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 4.064  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 5.853  ; 7.173  ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 5.657  ; 6.715  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 5.604  ; 6.726  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 4.490  ; 5.018  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 4.421  ; 4.857  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 5.853  ; 7.173  ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 5.345  ; 6.318  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 5.434  ; 6.406  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 5.130  ; 6.089  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 5.824  ; 7.097  ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 4.324  ; 4.769  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 4.765  ; 5.629  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 5.138  ; 5.987  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 4.792  ; 5.569  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 5.122  ; 6.071  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 4.510  ; 5.104  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 5.531  ; 6.558  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 5.824  ; 7.097  ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 6.407  ; 7.324  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 4.937  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -757,53 +757,53 @@ No paths to report.
 +-------------+------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+------------+-------+-------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 7.332 ; 7.432 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 8.276 ; 9.333 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 7.922 ; 8.825 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 7.332 ; 7.432 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 7.917 ; 8.780 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 7.509 ; 8.455 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 7.596 ; 8.568 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 8.149 ; 7.791 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 7.636 ; 7.949 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 7.965 ; 8.280 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 8.019 ; 8.495 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 7.797 ; 8.349 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 7.636 ; 7.949 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 8.047 ; 8.278 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 8.053 ; 8.137 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 8.702 ; 8.068 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 4.068 ; 4.434 ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 4.077 ; 4.446 ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 5.056 ; 6.073 ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 5.080 ; 6.066 ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 5.119 ; 6.157 ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 4.980 ; 5.871 ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 5.047 ; 6.067 ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 4.968 ; 5.900 ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 4.077 ; 4.446 ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 4.647 ; 5.162 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 3.283 ;       ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 4.347 ; 4.767 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 5.436 ; 6.433 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 5.354 ; 6.331 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 5.385 ; 6.424 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 5.181 ; 6.147 ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 4.347 ; 4.767 ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 4.392 ; 4.887 ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 4.979 ; 5.917 ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 5.548 ; 6.731 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 4.215 ; 4.687 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 4.251 ; 4.713 ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 5.202 ; 6.273 ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 4.215 ; 4.687 ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 5.395 ; 6.535 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 4.556 ; 5.352 ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 4.966 ; 5.836 ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 6.191 ; 7.744 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 5.338 ; 6.400 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 5.394 ; 6.323 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;       ; 3.697 ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 7.083 ; 7.390 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 7.342 ; 7.755 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 7.160 ; 7.509 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 7.130 ; 7.520 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 7.482 ; 7.988 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 7.090 ; 7.390 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 7.083 ; 7.689 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 9.206 ; 8.311 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 7.434 ; 7.724 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 8.130 ; 8.695 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 8.168 ; 8.762 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 7.434 ; 8.007 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 7.447 ; 7.724 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 8.115 ; 8.195 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 8.055 ; 8.010 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 8.862 ; 7.996 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 4.647 ; 5.300 ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 3.905 ; 4.322 ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 4.317 ; 5.108 ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 3.987 ; 4.415 ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 4.345 ; 5.169 ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 3.905 ; 4.323 ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 4.586 ; 5.432 ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 4.183 ; 4.687 ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 3.976 ; 4.322 ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 5.482 ; 6.171 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 3.851 ;       ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 4.030 ; 4.424 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 5.150 ; 6.084 ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 5.086 ; 6.062 ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 4.060 ; 4.505 ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 4.030 ; 4.424 ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 5.359 ; 6.560 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 4.864 ; 5.743 ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 4.941 ; 5.792 ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 4.685 ; 5.543 ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 3.917 ; 4.299 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 3.917 ; 4.299 ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 4.357 ; 5.153 ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 4.657 ; 5.391 ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 4.373 ; 5.096 ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 4.676 ; 5.544 ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 4.082 ; 4.589 ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 5.029 ; 5.950 ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 5.308 ; 6.456 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 5.099 ; 5.957 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;       ; 4.664 ; Fall       ; clk_25M         ;
 +-------------+------------+-------+-------+------------+-----------------+
 
 
@@ -819,7 +819,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 5.416 ;    ;    ; 6.200 ;
 ; sw[5]      ; led[5]      ; 4.272 ;    ;    ; 4.912 ;
 ; sw[6]      ; led[6]      ; 5.397 ;    ;    ; 6.089 ;
-; sw[7]      ; led[7]      ; 4.770 ;    ;    ; 5.538 ;
+; sw[7]      ; led[7]      ; 4.913 ;    ;    ; 5.789 ;
 ; sw[8]      ; led[8]      ; 4.471 ;    ;    ; 5.181 ;
 ; sw[9]      ; led[9]      ; 4.531 ;    ;    ; 5.213 ;
 +------------+-------------+-------+----+----+-------+
@@ -837,7 +837,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 4.508 ;    ;    ; 5.186 ;
 ; sw[5]      ; led[5]      ; 4.010 ;    ;    ; 4.634 ;
 ; sw[6]      ; led[6]      ; 4.524 ;    ;    ; 5.183 ;
-; sw[7]      ; led[7]      ; 4.463 ;    ;    ; 5.180 ;
+; sw[7]      ; led[7]      ; 4.570 ;    ;    ; 5.337 ;
 ; sw[8]      ; led[8]      ; 4.199 ;    ;    ; 4.889 ;
 ; sw[9]      ; led[9]      ; 4.241 ;    ;    ; 4.881 ;
 +------------+-------------+-------+----+----+-------+
@@ -854,9 +854,9 @@ No synchronizer chains to report.
 +-----------+--------+---------------+
 ; Clock     ; Slack  ; End Point TNS ;
 +-----------+--------+---------------+
-; clk_200ms ; -9.620 ; -928.940      ;
-; clk_25M   ; -6.612 ; -179.025      ;
-; clk       ; -3.272 ; -128.919      ;
+; clk_200ms ; -9.284 ; -917.997      ;
+; clk_25M   ; -5.994 ; -173.189      ;
+; clk       ; -3.377 ; -130.133      ;
 +-----------+--------+---------------+
 
 
@@ -865,9 +865,9 @@ No synchronizer chains to report.
 +-----------+--------+---------------+
 ; Clock     ; Slack  ; End Point TNS ;
 +-----------+--------+---------------+
-; clk       ; -0.863 ; -1.515        ;
+; clk       ; -0.948 ; -1.672        ;
 ; clk_200ms ; 0.174  ; 0.000         ;
-; clk_25M   ; 0.284  ; 0.000         ;
+; clk_25M   ; 0.412  ; 0.000         ;
 +-----------+--------+---------------+
 
 
@@ -888,9 +888,9 @@ No paths to report.
 +-----------+--------+-----------------------------+
 ; Clock     ; Slack  ; End Point TNS               ;
 +-----------+--------+-----------------------------+
-; clk       ; -0.617 ; -7.045                      ;
-; clk_25M   ; -0.022 ; -0.144                      ;
-; clk_200ms ; -0.011 ; -0.875                      ;
+; clk       ; -0.657 ; -7.128                      ;
+; clk_25M   ; 0.021  ; 0.000                       ;
+; clk_200ms ; 0.143  ; 0.000                       ;
 +-----------+--------+-----------------------------+
 
 
@@ -899,12 +899,12 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; key[*]    ; clk        ; 2.728 ; 3.714 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; 2.182 ; 2.604 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 2.728 ; 3.714 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 0.034 ; 0.917 ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 0.034 ; 0.917 ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; 2.915 ; 3.621 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 1.595 ; 2.460 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 1.432 ; 2.094 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 1.595 ; 2.460 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 0.257 ; 1.124 ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 0.257 ; 1.124 ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; 2.925 ; 3.642 ; Rise       ; clk_25M         ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -913,12 +913,12 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; key[*]    ; clk        ; 0.180  ; -0.497 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; -0.148 ; -0.911 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 0.180  ; -0.497 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 1.764  ; 1.030  ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 1.764  ; 1.030  ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; -1.616 ; -2.357 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 0.083  ; -0.657 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 0.080  ; -0.670 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 0.083  ; -0.657 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 1.422  ; 0.717  ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 1.422  ; 0.717  ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; -1.894 ; -2.554 ; Rise       ; clk_25M         ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -927,53 +927,53 @@ No paths to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 38.469 ; 39.555 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 38.469 ; 39.555 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 38.090 ; 39.074 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 37.064 ; 37.445 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 37.961 ; 38.784 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 37.629 ; 38.404 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 37.691 ; 38.488 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 38.152 ; 37.540 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 41.266 ; 41.323 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 40.632 ; 41.003 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 40.697 ; 41.323 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 40.438 ; 40.838 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 40.458 ; 40.800 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 40.537 ; 41.015 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 40.560 ; 40.963 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 41.266 ; 40.797 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 4.796  ; 5.041  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 5.314  ; 6.253  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 5.282  ; 6.236  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 5.246  ; 6.174  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 5.314  ; 6.253  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 5.111  ; 5.961  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 5.228  ; 6.182  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 5.148  ; 6.009  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 4.037  ; 4.402  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 6.264  ; 6.292  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 3.171  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 5.773  ; 6.881  ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 5.585  ; 6.541  ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 5.512  ; 6.447  ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 5.567  ; 6.574  ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 5.322  ; 6.240  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 4.321  ; 4.758  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 4.368  ; 4.878  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 5.159  ; 6.052  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 5.773  ; 6.881  ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 6.454  ; 7.910  ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 4.261  ; 4.706  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 5.403  ; 6.412  ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 4.190  ; 4.662  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 5.603  ; 6.683  ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 4.705  ; 5.403  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 5.134  ; 5.942  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 6.454  ; 7.910  ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 5.526  ; 6.552  ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 6.681  ; 7.285  ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 3.575  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 38.170 ; 37.091 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 35.866 ; 36.273 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 35.685 ; 36.090 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 35.642 ; 35.964 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 36.033 ; 36.535 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 35.402 ; 35.951 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 35.597 ; 35.897 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 38.170 ; 37.091 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 44.724 ; 45.035 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 44.320 ; 44.926 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 44.242 ; 45.035 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 43.266 ; 43.680 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 43.574 ; 43.839 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 43.874 ; 44.420 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 43.867 ; 44.187 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 44.724 ; 44.169 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 5.057  ; 5.580  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 4.728  ; 5.510  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 4.444  ; 5.151  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 3.994  ; 4.437  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 4.475  ; 5.247  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 3.908  ; 4.341  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 4.728  ; 5.510  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 4.189  ; 4.728  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 3.999  ; 4.352  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 6.742  ; 7.032  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 3.874  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 5.525  ; 6.647  ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 5.304  ; 6.205  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 5.247  ; 6.214  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 4.084  ; 4.552  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 3.985  ; 4.394  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 5.525  ; 6.647  ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 4.997  ; 5.840  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 5.050  ; 5.896  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 4.806  ; 5.613  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 5.506  ; 6.597  ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 3.961  ; 4.333  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 4.470  ; 5.202  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 4.798  ; 5.520  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 4.503  ; 5.156  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 4.849  ; 5.629  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 4.104  ; 4.636  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 5.180  ; 6.071  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 5.506  ; 6.597  ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 6.012  ; 6.790  ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 4.584  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -982,53 +982,53 @@ No paths to report.
 +-------------+------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+------------+-------+-------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 6.866 ; 6.906 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 7.890 ; 8.739 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 7.528 ; 8.264 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 6.866 ; 6.906 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 7.487 ; 8.195 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 7.098 ; 7.900 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 7.208 ; 8.026 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 7.587 ; 7.332 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 7.221 ; 7.462 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 7.524 ; 7.756 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 7.580 ; 7.965 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 7.402 ; 7.859 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 7.221 ; 7.462 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 7.616 ; 7.779 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 7.607 ; 7.638 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 8.166 ; 7.652 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 3.692 ; 3.986 ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 3.660 ; 3.968 ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 4.785 ; 5.605 ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 4.771 ; 5.584 ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 4.840 ; 5.682 ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 4.646 ; 5.398 ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 4.742 ; 5.586 ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 4.679 ; 5.438 ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 3.660 ; 3.968 ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 4.208 ; 4.666 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 2.992 ;       ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 3.910 ; 4.278 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 5.080 ; 5.920 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 5.014 ; 5.848 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 5.051 ; 5.916 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 4.845 ; 5.663 ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 3.910 ; 4.278 ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 3.953 ; 4.392 ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 4.676 ; 5.462 ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 5.258 ; 6.237 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 3.796 ; 4.199 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 3.854 ; 4.214 ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 4.901 ; 5.788 ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 3.796 ; 4.199 ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 5.085 ; 6.017 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 4.290 ; 4.918 ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 4.671 ; 5.387 ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 5.888 ; 7.177 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 5.005 ; 5.894 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 5.091 ; 5.845 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;       ; 3.313 ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 6.636 ; 6.905 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 6.895 ; 7.247 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 6.718 ; 7.026 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 6.687 ; 7.043 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 7.037 ; 7.470 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 6.636 ; 6.905 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 6.656 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 8.654 ; 7.906 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 6.986 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 7.691 ; 8.145 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 7.718 ; 8.196 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 6.986 ; 7.493 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 6.997 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 7.667 ; 7.683 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 7.568 ; 7.490 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 8.297 ; 7.555 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 4.348 ; 4.860 ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 3.529 ; 3.896 ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 4.058 ; 4.687 ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 3.608 ; 3.979 ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 4.070 ; 4.742 ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 3.529 ; 3.896 ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 4.300 ; 4.996 ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 3.785 ; 4.226 ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 3.611 ; 3.898 ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 5.100 ; 5.686 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 3.667 ;       ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 3.620 ; 3.972 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 4.817 ; 5.607 ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 4.751 ; 5.591 ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 3.681 ; 4.065 ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 3.620 ; 3.972 ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 5.048 ; 6.045 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 4.537 ; 5.287 ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 4.581 ; 5.316 ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 4.378 ; 5.088 ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 3.577 ; 3.879 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 3.577 ; 3.879 ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 4.077 ; 4.735 ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 4.338 ; 4.946 ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 4.099 ; 4.686 ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 4.418 ; 5.110 ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 3.704 ; 4.150 ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 4.698 ; 5.480 ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 5.008 ; 5.973 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 4.780 ; 5.491 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;       ; 4.304 ; Fall       ; clk_25M         ;
 +-------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1044,7 +1044,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 5.150 ;    ;    ; 5.912 ;
 ; sw[5]      ; led[5]      ; 3.968 ;    ;    ; 4.632 ;
 ; sw[6]      ; led[6]      ; 5.085 ;    ;    ; 5.804 ;
-; sw[7]      ; led[7]      ; 4.442 ;    ;    ; 5.219 ;
+; sw[7]      ; led[7]      ; 4.596 ;    ;    ; 5.461 ;
 ; sw[8]      ; led[8]      ; 4.142 ;    ;    ; 4.869 ;
 ; sw[9]      ; led[9]      ; 4.205 ;    ;    ; 4.901 ;
 +------------+-------------+-------+----+----+-------+
@@ -1062,7 +1062,7 @@ No paths to report.
 ; sw[4]      ; led[4]      ; 4.253 ;    ;    ; 4.919 ;
 ; sw[5]      ; led[5]      ; 3.717 ;    ;    ; 4.360 ;
 ; sw[6]      ; led[6]      ; 4.227 ;    ;    ; 4.914 ;
-; sw[7]      ; led[7]      ; 4.150 ;    ;    ; 4.874 ;
+; sw[7]      ; led[7]      ; 4.268 ;    ;    ; 5.031 ;
 ; sw[8]      ; led[8]      ; 3.883 ;    ;    ; 4.584 ;
 ; sw[9]      ; led[9]      ; 3.928 ;    ;    ; 4.582 ;
 +------------+-------------+-------+----+----+-------+
@@ -1079,14 +1079,14 @@ No synchronizer chains to report.
 +------------------+-----------+--------+----------+---------+---------------------+
 ; Clock            ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack ; -18.974   ; -1.674 ; N/A      ; N/A     ; -0.724              ;
-;  clk             ; -6.805    ; -1.674 ; N/A      ; N/A     ; -0.724              ;
-;  clk_200ms       ; -18.974   ; 0.174  ; N/A      ; N/A     ; -0.394              ;
-;  clk_25M         ; -12.243   ; 0.284  ; N/A      ; N/A     ; -0.394              ;
-; Design-wide TNS  ; -2469.824 ; -3.031 ; 0.0      ; 0.0     ; -129.0              ;
-;  clk             ; -285.370  ; -3.031 ; N/A      ; N/A     ; -39.310             ;
-;  clk_200ms       ; -1838.055 ; 0.000  ; N/A      ; N/A     ; -65.177             ;
-;  clk_25M         ; -346.399  ; 0.000  ; N/A      ; N/A     ; -26.118             ;
+; Worst-case Slack ; -17.678   ; -1.536 ; N/A      ; N/A     ; -0.744              ;
+;  clk             ; -7.191    ; -1.536 ; N/A      ; N/A     ; -0.744              ;
+;  clk_200ms       ; -17.678   ; 0.174  ; N/A      ; N/A     ; -0.394              ;
+;  clk_25M         ; -11.408   ; 0.412  ; N/A      ; N/A     ; -0.394              ;
+; Design-wide TNS  ; -2383.951 ; -3.063 ; 0.0      ; 0.0     ; -129.353            ;
+;  clk             ; -298.678  ; -3.063 ; N/A      ; N/A     ; -39.630             ;
+;  clk_200ms       ; -1741.254 ; 0.000  ; N/A      ; N/A     ; -65.141             ;
+;  clk_25M         ; -344.019  ; 0.000  ; N/A      ; N/A     ; -24.933             ;
 +------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -1095,12 +1095,12 @@ No synchronizer chains to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; key[*]    ; clk        ; 4.974 ; 5.687 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; 3.819 ; 3.956 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 4.974 ; 5.687 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 0.293 ; 1.094 ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 0.293 ; 1.094 ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; 5.242 ; 5.858 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 3.176 ; 3.832 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 2.707 ; 3.227 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 3.176 ; 3.832 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 0.719 ; 1.444 ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 0.719 ; 1.444 ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; 5.401 ; 6.050 ; Rise       ; clk_25M         ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1109,12 +1109,12 @@ No synchronizer chains to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; key[*]    ; clk        ; 0.358  ; -0.147 ; Rise       ; clk             ;
-;  key[2]   ; clk        ; -0.148 ; -0.797 ; Rise       ; clk             ;
-;  key[3]   ; clk        ; 0.358  ; -0.147 ; Rise       ; clk             ;
-; key[*]    ; clk_200ms  ; 3.226  ; 2.637  ; Rise       ; clk_200ms       ;
-;  key[1]   ; clk_200ms  ; 3.226  ; 2.637  ; Rise       ; clk_200ms       ;
-; reset     ; clk_25M    ; -1.616 ; -2.357 ; Rise       ; clk_25M         ;
+; key[*]    ; clk        ; 0.164  ; -0.385 ; Rise       ; clk             ;
+;  key[2]   ; clk        ; 0.083  ; -0.502 ; Rise       ; clk             ;
+;  key[3]   ; clk        ; 0.164  ; -0.385 ; Rise       ; clk             ;
+; key[*]    ; clk_200ms  ; 2.500  ; 1.984  ; Rise       ; clk_200ms       ;
+;  key[1]   ; clk_200ms  ; 2.500  ; 1.984  ; Rise       ; clk_200ms       ;
+; reset     ; clk_25M    ; -1.894 ; -2.554 ; Rise       ; clk_25M         ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1123,53 +1123,53 @@ No synchronizer chains to report.
 +-------------+------------+--------+--------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-------------+------------+--------+--------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 73.228 ; 74.789 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 73.228 ; 74.789 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 72.825 ; 74.106 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 71.403 ; 71.874 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 72.621 ; 73.808 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 72.142 ; 73.147 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 72.135 ; 73.265 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 72.888 ; 72.092 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 77.564 ; 77.700 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 76.756 ; 77.276 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 76.768 ; 77.700 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 76.337 ; 76.965 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 76.432 ; 76.898 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 76.587 ; 77.268 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 76.632 ; 77.174 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 77.564 ; 76.922 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 8.515  ; 8.820  ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 8.645  ; 9.861  ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 8.645  ; 9.861  ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 8.567  ; 9.731  ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 8.517  ; 9.695  ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 8.518  ; 9.497  ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 8.571  ; 9.764  ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 8.433  ; 9.517  ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 7.286  ; 7.692  ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 11.059 ; 10.975 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 5.581  ;        ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 9.212  ; 10.601 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 9.204  ; 10.330 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 9.109  ; 10.162 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 9.103  ; 10.350 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 8.871  ; 9.897  ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 7.743  ; 8.191  ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 7.827  ; 8.350  ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 8.529  ; 9.591  ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 9.212  ; 10.601 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 10.149 ; 11.942 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 7.576  ; 8.182  ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 8.791  ; 10.039 ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 7.522  ; 8.077  ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 9.061  ; 10.449 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 7.803  ; 8.676  ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 8.388  ; 9.381  ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 10.149 ; 11.942 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 9.085  ; 10.318 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 10.939 ; 11.795 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;        ; 6.105  ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 74.634 ; 73.182 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 71.604 ; 72.068 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 71.333 ; 71.769 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 71.213 ; 71.565 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 71.832 ; 72.454 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 70.756 ; 71.556 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 71.159 ; 71.490 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 74.634 ; 73.182 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 82.434 ; 82.977 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 81.930 ; 82.767 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 81.845 ; 82.977 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 80.565 ; 80.997 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 80.931 ; 81.263 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 81.336 ; 82.039 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 81.359 ; 81.773 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 82.434 ; 81.668 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 8.497  ; 9.192  ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 7.825  ; 8.780  ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 7.432  ; 8.326  ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 7.127  ; 7.626  ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 7.441  ; 8.407  ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 7.016  ; 7.473  ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 7.825  ; 8.780  ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 7.542  ; 8.132  ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 7.002  ; 7.401  ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 11.107 ; 11.455 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 6.182  ;        ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 8.952  ; 10.323 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 8.804  ; 9.849  ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 8.748  ; 9.870  ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 7.267  ; 7.806  ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 7.249  ; 7.595  ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 8.952  ; 10.323 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 8.395  ; 9.341  ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 8.573  ; 9.514  ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 8.037  ; 9.013  ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 8.913  ; 10.254 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 6.982  ; 7.434  ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 7.414  ; 8.289  ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 8.011  ; 8.898  ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 7.422  ; 8.231  ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 7.984  ; 8.984  ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 7.311  ; 7.896  ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 8.626  ; 9.627  ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 8.913  ; 10.254 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 10.232 ; 11.198 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;        ; 7.085  ; Fall       ; clk_25M         ;
 +-------------+------------+--------+--------+------------+-----------------+
 
 
@@ -1178,53 +1178,53 @@ No synchronizer chains to report.
 +-------------+------------+-------+-------+------------+-----------------+
 ; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-------------+------------+-------+-------+------------+-----------------+
-; hex0[*]     ; clk_200ms  ; 6.866 ; 6.906 ; Rise       ; clk_200ms       ;
-;  hex0[0]    ; clk_200ms  ; 7.890 ; 8.739 ; Rise       ; clk_200ms       ;
-;  hex0[1]    ; clk_200ms  ; 7.528 ; 8.264 ; Rise       ; clk_200ms       ;
-;  hex0[2]    ; clk_200ms  ; 6.866 ; 6.906 ; Rise       ; clk_200ms       ;
-;  hex0[3]    ; clk_200ms  ; 7.487 ; 8.195 ; Rise       ; clk_200ms       ;
-;  hex0[4]    ; clk_200ms  ; 7.098 ; 7.900 ; Rise       ; clk_200ms       ;
-;  hex0[5]    ; clk_200ms  ; 7.208 ; 8.026 ; Rise       ; clk_200ms       ;
-;  hex0[6]    ; clk_200ms  ; 7.587 ; 7.332 ; Rise       ; clk_200ms       ;
-; hex1[*]     ; clk_200ms  ; 7.221 ; 7.462 ; Rise       ; clk_200ms       ;
-;  hex1[0]    ; clk_200ms  ; 7.524 ; 7.756 ; Rise       ; clk_200ms       ;
-;  hex1[1]    ; clk_200ms  ; 7.580 ; 7.965 ; Rise       ; clk_200ms       ;
-;  hex1[2]    ; clk_200ms  ; 7.402 ; 7.859 ; Rise       ; clk_200ms       ;
-;  hex1[3]    ; clk_200ms  ; 7.221 ; 7.462 ; Rise       ; clk_200ms       ;
-;  hex1[4]    ; clk_200ms  ; 7.616 ; 7.779 ; Rise       ; clk_200ms       ;
-;  hex1[5]    ; clk_200ms  ; 7.607 ; 7.638 ; Rise       ; clk_200ms       ;
-;  hex1[6]    ; clk_200ms  ; 8.166 ; 7.652 ; Rise       ; clk_200ms       ;
-; HS          ; clk_25M    ; 3.692 ; 3.986 ; Rise       ; clk_25M         ;
-; VGA_B[*]    ; clk_25M    ; 3.660 ; 3.968 ; Rise       ; clk_25M         ;
-;  VGA_B[0]   ; clk_25M    ; 4.785 ; 5.605 ; Rise       ; clk_25M         ;
-;  VGA_B[1]   ; clk_25M    ; 4.771 ; 5.584 ; Rise       ; clk_25M         ;
-;  VGA_B[3]   ; clk_25M    ; 4.840 ; 5.682 ; Rise       ; clk_25M         ;
-;  VGA_B[4]   ; clk_25M    ; 4.646 ; 5.398 ; Rise       ; clk_25M         ;
-;  VGA_B[5]   ; clk_25M    ; 4.742 ; 5.586 ; Rise       ; clk_25M         ;
-;  VGA_B[6]   ; clk_25M    ; 4.679 ; 5.438 ; Rise       ; clk_25M         ;
-;  VGA_B[7]   ; clk_25M    ; 3.660 ; 3.968 ; Rise       ; clk_25M         ;
-; VGA_BLANK_N ; clk_25M    ; 4.208 ; 4.666 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ; 2.992 ;       ; Rise       ; clk_25M         ;
-; VGA_G[*]    ; clk_25M    ; 3.910 ; 4.278 ; Rise       ; clk_25M         ;
-;  VGA_G[0]   ; clk_25M    ; 5.080 ; 5.920 ; Rise       ; clk_25M         ;
-;  VGA_G[1]   ; clk_25M    ; 5.014 ; 5.848 ; Rise       ; clk_25M         ;
-;  VGA_G[2]   ; clk_25M    ; 5.051 ; 5.916 ; Rise       ; clk_25M         ;
-;  VGA_G[3]   ; clk_25M    ; 4.845 ; 5.663 ; Rise       ; clk_25M         ;
-;  VGA_G[4]   ; clk_25M    ; 3.910 ; 4.278 ; Rise       ; clk_25M         ;
-;  VGA_G[5]   ; clk_25M    ; 3.953 ; 4.392 ; Rise       ; clk_25M         ;
-;  VGA_G[6]   ; clk_25M    ; 4.676 ; 5.462 ; Rise       ; clk_25M         ;
-;  VGA_G[7]   ; clk_25M    ; 5.258 ; 6.237 ; Rise       ; clk_25M         ;
-; VGA_R[*]    ; clk_25M    ; 3.796 ; 4.199 ; Rise       ; clk_25M         ;
-;  VGA_R[0]   ; clk_25M    ; 3.854 ; 4.214 ; Rise       ; clk_25M         ;
-;  VGA_R[1]   ; clk_25M    ; 4.901 ; 5.788 ; Rise       ; clk_25M         ;
-;  VGA_R[2]   ; clk_25M    ; 3.796 ; 4.199 ; Rise       ; clk_25M         ;
-;  VGA_R[3]   ; clk_25M    ; 5.085 ; 6.017 ; Rise       ; clk_25M         ;
-;  VGA_R[4]   ; clk_25M    ; 4.290 ; 4.918 ; Rise       ; clk_25M         ;
-;  VGA_R[5]   ; clk_25M    ; 4.671 ; 5.387 ; Rise       ; clk_25M         ;
-;  VGA_R[6]   ; clk_25M    ; 5.888 ; 7.177 ; Rise       ; clk_25M         ;
-;  VGA_R[7]   ; clk_25M    ; 5.005 ; 5.894 ; Rise       ; clk_25M         ;
-; VS          ; clk_25M    ; 5.091 ; 5.845 ; Rise       ; clk_25M         ;
-; VGA_CLK     ; clk_25M    ;       ; 3.313 ; Fall       ; clk_25M         ;
+; hex0[*]     ; clk_200ms  ; 6.636 ; 6.905 ; Rise       ; clk_200ms       ;
+;  hex0[0]    ; clk_200ms  ; 6.895 ; 7.247 ; Rise       ; clk_200ms       ;
+;  hex0[1]    ; clk_200ms  ; 6.718 ; 7.026 ; Rise       ; clk_200ms       ;
+;  hex0[2]    ; clk_200ms  ; 6.687 ; 7.043 ; Rise       ; clk_200ms       ;
+;  hex0[3]    ; clk_200ms  ; 7.037 ; 7.470 ; Rise       ; clk_200ms       ;
+;  hex0[4]    ; clk_200ms  ; 6.636 ; 6.905 ; Rise       ; clk_200ms       ;
+;  hex0[5]    ; clk_200ms  ; 6.656 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex0[6]    ; clk_200ms  ; 8.654 ; 7.906 ; Rise       ; clk_200ms       ;
+; hex1[*]     ; clk_200ms  ; 6.986 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex1[0]    ; clk_200ms  ; 7.691 ; 8.145 ; Rise       ; clk_200ms       ;
+;  hex1[1]    ; clk_200ms  ; 7.718 ; 8.196 ; Rise       ; clk_200ms       ;
+;  hex1[2]    ; clk_200ms  ; 6.986 ; 7.493 ; Rise       ; clk_200ms       ;
+;  hex1[3]    ; clk_200ms  ; 6.997 ; 7.221 ; Rise       ; clk_200ms       ;
+;  hex1[4]    ; clk_200ms  ; 7.667 ; 7.683 ; Rise       ; clk_200ms       ;
+;  hex1[5]    ; clk_200ms  ; 7.568 ; 7.490 ; Rise       ; clk_200ms       ;
+;  hex1[6]    ; clk_200ms  ; 8.297 ; 7.555 ; Rise       ; clk_200ms       ;
+; HS          ; clk_25M    ; 4.348 ; 4.860 ; Rise       ; clk_25M         ;
+; VGA_B[*]    ; clk_25M    ; 3.529 ; 3.896 ; Rise       ; clk_25M         ;
+;  VGA_B[0]   ; clk_25M    ; 4.058 ; 4.687 ; Rise       ; clk_25M         ;
+;  VGA_B[1]   ; clk_25M    ; 3.608 ; 3.979 ; Rise       ; clk_25M         ;
+;  VGA_B[3]   ; clk_25M    ; 4.070 ; 4.742 ; Rise       ; clk_25M         ;
+;  VGA_B[4]   ; clk_25M    ; 3.529 ; 3.896 ; Rise       ; clk_25M         ;
+;  VGA_B[5]   ; clk_25M    ; 4.300 ; 4.996 ; Rise       ; clk_25M         ;
+;  VGA_B[6]   ; clk_25M    ; 3.785 ; 4.226 ; Rise       ; clk_25M         ;
+;  VGA_B[7]   ; clk_25M    ; 3.611 ; 3.898 ; Rise       ; clk_25M         ;
+; VGA_BLANK_N ; clk_25M    ; 5.100 ; 5.686 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ; 3.667 ;       ; Rise       ; clk_25M         ;
+; VGA_G[*]    ; clk_25M    ; 3.620 ; 3.972 ; Rise       ; clk_25M         ;
+;  VGA_G[0]   ; clk_25M    ; 4.817 ; 5.607 ; Rise       ; clk_25M         ;
+;  VGA_G[1]   ; clk_25M    ; 4.751 ; 5.591 ; Rise       ; clk_25M         ;
+;  VGA_G[2]   ; clk_25M    ; 3.681 ; 4.065 ; Rise       ; clk_25M         ;
+;  VGA_G[3]   ; clk_25M    ; 3.620 ; 3.972 ; Rise       ; clk_25M         ;
+;  VGA_G[4]   ; clk_25M    ; 5.048 ; 6.045 ; Rise       ; clk_25M         ;
+;  VGA_G[5]   ; clk_25M    ; 4.537 ; 5.287 ; Rise       ; clk_25M         ;
+;  VGA_G[6]   ; clk_25M    ; 4.581 ; 5.316 ; Rise       ; clk_25M         ;
+;  VGA_G[7]   ; clk_25M    ; 4.378 ; 5.088 ; Rise       ; clk_25M         ;
+; VGA_R[*]    ; clk_25M    ; 3.577 ; 3.879 ; Rise       ; clk_25M         ;
+;  VGA_R[0]   ; clk_25M    ; 3.577 ; 3.879 ; Rise       ; clk_25M         ;
+;  VGA_R[1]   ; clk_25M    ; 4.077 ; 4.735 ; Rise       ; clk_25M         ;
+;  VGA_R[2]   ; clk_25M    ; 4.338 ; 4.946 ; Rise       ; clk_25M         ;
+;  VGA_R[3]   ; clk_25M    ; 4.099 ; 4.686 ; Rise       ; clk_25M         ;
+;  VGA_R[4]   ; clk_25M    ; 4.418 ; 5.110 ; Rise       ; clk_25M         ;
+;  VGA_R[5]   ; clk_25M    ; 3.704 ; 4.150 ; Rise       ; clk_25M         ;
+;  VGA_R[6]   ; clk_25M    ; 4.698 ; 5.480 ; Rise       ; clk_25M         ;
+;  VGA_R[7]   ; clk_25M    ; 5.008 ; 5.973 ; Rise       ; clk_25M         ;
+; VS          ; clk_25M    ; 4.780 ; 5.491 ; Rise       ; clk_25M         ;
+; VGA_CLK     ; clk_25M    ;       ; 4.304 ; Fall       ; clk_25M         ;
 +-------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1240,7 +1240,7 @@ No synchronizer chains to report.
 ; sw[4]      ; led[4]      ; 9.071 ;    ;    ; 9.485 ;
 ; sw[5]      ; led[5]      ; 7.144 ;    ;    ; 7.395 ;
 ; sw[6]      ; led[6]      ; 9.206 ;    ;    ; 9.422 ;
-; sw[7]      ; led[7]      ; 7.923 ;    ;    ; 8.238 ;
+; sw[7]      ; led[7]      ; 8.092 ;    ;    ; 8.549 ;
 ; sw[8]      ; led[8]      ; 7.489 ;    ;    ; 7.749 ;
 ; sw[9]      ; led[9]      ; 7.525 ;    ;    ; 7.772 ;
 +------------+-------------+-------+----+----+-------+
@@ -1258,7 +1258,7 @@ No synchronizer chains to report.
 ; sw[4]      ; led[4]      ; 4.253 ;    ;    ; 4.919 ;
 ; sw[5]      ; led[5]      ; 3.717 ;    ;    ; 4.360 ;
 ; sw[6]      ; led[6]      ; 4.227 ;    ;    ; 4.914 ;
-; sw[7]      ; led[7]      ; 4.150 ;    ;    ; 4.874 ;
+; sw[7]      ; led[7]      ; 4.268 ;    ;    ; 5.031 ;
 ; sw[8]      ; led[8]      ; 3.883 ;    ;    ; 4.584 ;
 ; sw[9]      ; led[9]      ; 3.928 ;    ;    ; 4.582 ;
 +------------+-------------+-------+----+----+-------+
@@ -1735,10 +1735,10 @@ No synchronizer chains to report.
 ; clk        ; clk       ; 155854       ; 0        ; 0        ; 0        ;
 ; clk_25M    ; clk       ; 1            ; 1        ; 0        ; 0        ;
 ; clk_200ms  ; clk       ; 1            ; 1        ; 0        ; 0        ;
-; clk        ; clk_25M   ; 11486        ; 0        ; 0        ; 0        ;
-; clk_25M    ; clk_25M   ; 6930         ; 0        ; 0        ; 0        ;
-; clk_200ms  ; clk_25M   ; 27059        ; 0        ; 0        ; 0        ;
-; clk        ; clk_200ms ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clk        ; clk_25M   ; 11489        ; 0        ; 0        ; 0        ;
+; clk_25M    ; clk_25M   ; 6939         ; 0        ; 0        ; 0        ;
+; clk_200ms  ; clk_25M   ; 24213        ; 0        ; 0        ; 0        ;
+; clk        ; clk_200ms ; 1991035790   ; 0        ; 0        ; 0        ;
 ; clk_200ms  ; clk_200ms ; > 2147483647 ; 0        ; 0        ; 0        ;
 +------------+-----------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1752,10 +1752,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; clk        ; clk       ; 155854       ; 0        ; 0        ; 0        ;
 ; clk_25M    ; clk       ; 1            ; 1        ; 0        ; 0        ;
 ; clk_200ms  ; clk       ; 1            ; 1        ; 0        ; 0        ;
-; clk        ; clk_25M   ; 11486        ; 0        ; 0        ; 0        ;
-; clk_25M    ; clk_25M   ; 6930         ; 0        ; 0        ; 0        ;
-; clk_200ms  ; clk_25M   ; 27059        ; 0        ; 0        ; 0        ;
-; clk        ; clk_200ms ; > 2147483647 ; 0        ; 0        ; 0        ;
+; clk        ; clk_25M   ; 11489        ; 0        ; 0        ; 0        ;
+; clk_25M    ; clk_25M   ; 6939         ; 0        ; 0        ; 0        ;
+; clk_200ms  ; clk_25M   ; 24213        ; 0        ; 0        ; 0        ;
+; clk        ; clk_200ms ; 1991035790   ; 0        ; 0        ; 0        ;
 ; clk_200ms  ; clk_200ms ; > 2147483647 ; 0        ; 0        ; 0        ;
 +------------+-----------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -1793,7 +1793,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
-    Info: Processing started: Sun Dec 23 21:29:45 2018
+    Info: Processing started: Sun Dec 23 21:40:10 2018
 Info: Command: quartus_sta VGA -c VGA
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored assignments for entity "simple_vga_game" -- entity does not exist in design
@@ -1836,26 +1836,26 @@ Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -18.821
+Info (332146): Worst-case setup slack is -17.624
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -18.821           -1817.370 clk_200ms 
-    Info (332119):   -12.243            -344.058 clk_25M 
-    Info (332119):    -6.644            -281.229 clk 
-Info (332146): Worst-case hold slack is -1.674
+    Info (332119):   -17.624           -1729.573 clk_200ms 
+    Info (332119):   -11.362            -342.016 clk_25M 
+    Info (332119):    -6.941            -292.812 clk 
+Info (332146): Worst-case hold slack is -1.536
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.674              -3.031 clk 
-    Info (332119):     0.377               0.000 clk_200ms 
-    Info (332119):     0.874               0.000 clk_25M 
+    Info (332119):    -1.536              -3.063 clk 
+    Info (332119):     0.379               0.000 clk_200ms 
+    Info (332119):     0.903               0.000 clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.715
+Info (332146): Worst-case minimum pulse width slack is -0.734
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.715             -35.743 clk 
-    Info (332119):    -0.394             -65.177 clk_200ms 
-    Info (332119):    -0.394             -26.118 clk_25M 
+    Info (332119):    -0.734             -35.854 clk 
+    Info (332119):    -0.394             -65.141 clk_200ms 
+    Info (332119):    -0.394             -24.933 clk_25M 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1863,26 +1863,26 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -18.974
+Info (332146): Worst-case setup slack is -17.678
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -18.974           -1838.055 clk_200ms 
-    Info (332119):   -12.226            -346.399 clk_25M 
-    Info (332119):    -6.805            -285.370 clk 
-Info (332146): Worst-case hold slack is -1.572
+    Info (332119):   -17.678           -1741.254 clk_200ms 
+    Info (332119):   -11.408            -344.019 clk_25M 
+    Info (332119):    -7.191            -298.678 clk 
+Info (332146): Worst-case hold slack is -1.483
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -1.572              -2.793 clk 
-    Info (332119):     0.390               0.000 clk_200ms 
-    Info (332119):     0.859               0.000 clk_25M 
+    Info (332119):    -1.483              -2.904 clk 
+    Info (332119):     0.392               0.000 clk_200ms 
+    Info (332119):     0.884               0.000 clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.724
+Info (332146): Worst-case minimum pulse width slack is -0.744
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.724             -39.310 clk 
-    Info (332119):    -0.394             -63.756 clk_200ms 
-    Info (332119):    -0.394             -25.934 clk_25M 
+    Info (332119):    -0.744             -39.630 clk 
+    Info (332119):    -0.394             -64.829 clk_200ms 
+    Info (332119):    -0.394             -24.894 clk_25M 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Warning (334000): Timing characteristics of device 5CSEMA5F31C6 are preliminary
@@ -1890,55 +1890,55 @@ Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -10.332
+Info (332146): Worst-case setup slack is -9.994
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -10.332            -996.588 clk_200ms 
-    Info (332119):    -7.025            -190.307 clk_25M 
-    Info (332119):    -3.532            -140.989 clk 
-Info (332146): Worst-case hold slack is -0.892
+    Info (332119):    -9.994            -989.048 clk_200ms 
+    Info (332119):    -6.320            -183.627 clk_25M 
+    Info (332119):    -3.638            -142.507 clk 
+Info (332146): Worst-case hold slack is -0.937
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.892              -1.523 clk 
-    Info (332119):     0.182               0.000 clk_200ms 
-    Info (332119):     0.309               0.000 clk_25M 
+    Info (332119):    -0.937              -1.630 clk 
+    Info (332119):     0.181               0.000 clk_200ms 
+    Info (332119):     0.446               0.000 clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.639
+Info (332146): Worst-case minimum pulse width slack is -0.684
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.639              -7.153 clk 
-    Info (332119):    -0.061              -0.586 clk_25M 
-    Info (332119):    -0.041              -3.734 clk_200ms 
+    Info (332119):    -0.684              -7.137 clk 
+    Info (332119):    -0.009              -0.117 clk_25M 
+    Info (332119):     0.133               0.000 clk_200ms 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.620
+Info (332146): Worst-case setup slack is -9.284
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.620            -928.940 clk_200ms 
-    Info (332119):    -6.612            -179.025 clk_25M 
-    Info (332119):    -3.272            -128.919 clk 
-Info (332146): Worst-case hold slack is -0.863
+    Info (332119):    -9.284            -917.997 clk_200ms 
+    Info (332119):    -5.994            -173.189 clk_25M 
+    Info (332119):    -3.377            -130.133 clk 
+Info (332146): Worst-case hold slack is -0.948
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.863              -1.515 clk 
+    Info (332119):    -0.948              -1.672 clk 
     Info (332119):     0.174               0.000 clk_200ms 
-    Info (332119):     0.284               0.000 clk_25M 
+    Info (332119):     0.412               0.000 clk_25M 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.617
+Info (332146): Worst-case minimum pulse width slack is -0.657
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.617              -7.045 clk 
-    Info (332119):    -0.022              -0.144 clk_25M 
-    Info (332119):    -0.011              -0.875 clk_200ms 
+    Info (332119):    -0.657              -7.128 clk 
+    Info (332119):     0.021               0.000 clk_25M 
+    Info (332119):     0.143               0.000 clk_200ms 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 5059 megabytes
-    Info: Processing ended: Sun Dec 23 21:29:57 2018
+    Info: Peak virtual memory: 5054 megabytes
+    Info: Processing ended: Sun Dec 23 21:40:22 2018
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:18
 

@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Sun Dec 23 21:28:30 2018
+Analysis & Synthesis Status : Successful - Sun Dec 23 21:38:52 2018
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Full Version
 Revision Name : VGA
 Top-level Entity Name : vga_display
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 220
+Total registers : 219
 Total pins : 95
 Total virtual pins : 0
 Total block memory bits : 0
