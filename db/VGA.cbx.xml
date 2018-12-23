@@ -1,5 +1,8 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="VGA">
+		<CBX_INST_ENTRY INSTANCE_NAME="|vga_display|out_port_seg:s|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_ibm.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vga_display|out_port_seg:s|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_l3m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|vga_display|out_port_seg:s|lpm_divide:Mod1" CBX_FILE_NAME="lpm_divide_l3m.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

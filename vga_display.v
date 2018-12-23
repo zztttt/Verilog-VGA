@@ -1,10 +1,15 @@
 module vga_display (
-	input up,
 	input reset,
 	input clk,
-	input sw9,
-	input sw8,
+	input[9:0] sw,
 	input[3:1] key,
+	output reg[9:0] led,
+	output[6:0] hex0,
+	output[6:0] hex1,
+	output[6:0] hex2,
+	output[6:0] hex3,
+	output[6:0] hex4,
+	output[6:0] hex5,
 	output HS,
 	output VS,
 	output reg[7:0] VGA_R,
@@ -31,6 +36,7 @@ module vga_display (
 	reg[31:0] speed;
 	
 	reg finish;
+	reg[31:0] score;
 	
 	reg[31:0] ball_x, ball_y;
 	parameter ball_radius = 10'd10;
@@ -76,6 +82,7 @@ module vga_display (
 		rec_y <= 10'd401;
 		//finish
 		finish <= 0;
+		score <= 0;
 	end
 	
 	reg clock_slow;
@@ -84,6 +91,20 @@ module vga_display (
 	begin
 		clock_slow = ~clock_slow;
 	end
+	
+	integer led_i;
+
+	always @(sw)
+	begin
+		//speed <= speed + sw[9:5];
+		//speed <= speed + sw[4:0];
+		//speed <= (10'd10 + sw[9:0]) % 10'd30;
+		for(led_i = 0; led_i < 10; led_i = led_i + 1)
+		begin
+			led[led_i] <= sw[led_i]; 
+		end
+	end
+	
 	//rec move
 	always@(posedge clk)begin
 		if(clk)
@@ -148,6 +169,7 @@ module vga_display (
 				&& battles_state[b])
 			begin
 				battles_state[b] = 0;
+				score <= score + 1;
 				//direction = ~direction;
 				if(ball_x < rec_x)
 				begin
@@ -266,7 +288,9 @@ module vga_display (
 	.blank(VGA_BLANK_N),
 	.vga_clk(VGA_CLK)
 	);
-
+	out_port_seg s(score, hex1, hex0);
+	out_port_seg s1(0, hex3, hex2);
+	out_port_seg s2(0, hex5, hex4);
 	//assign color
 	integer i;
 	always@(posedge clk_25M)
